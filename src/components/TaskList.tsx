@@ -54,7 +54,7 @@ export const TaskList = ({ tasks, onEdit, onDelete }: TaskListProps) => {
 
   return (
     <div className="container-fluid">
-      {/* search and sort controls - ugh im a sheep making it mypspace THEME AYYYYE */}
+      {/* search and sort controls - y2k style */}
       <div className="row mb-4">
         <div className="col-md-8">
           <input
@@ -62,22 +62,14 @@ export const TaskList = ({ tasks, onEdit, onDelete }: TaskListProps) => {
             placeholder="search tasks by title or description..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="form-control form-control-lg border-3 border-primary"
-            style={{ 
-              boxShadow: '3px 3px 0px rgba(0,0,0,0.3)',
-              fontWeight: 'bold'
-            }}
+            className="form-control form-control-lg y2k-input"
           />
         </div>
         <div className="col-md-4">
           <select 
             value={sortBy} 
             onChange={(e) => setSortBy(e.target.value as 'date' | 'priority' | 'status')}
-            className="form-select form-select-lg border-3 border-success"
-            style={{ 
-              boxShadow: '3px 3px 0px rgba(0,0,0,0.3)',
-              fontWeight: 'bold'
-            }}
+            className="form-select form-select-lg y2k-input"
           >
             <option value="date">sort by due date</option>
             <option value="priority">sort by priority</option>
@@ -86,8 +78,8 @@ export const TaskList = ({ tasks, onEdit, onDelete }: TaskListProps) => {
         </div>
       </div>
 
-      <div className="alert alert-info border-3" style={{ boxShadow: '4px 4px 0px rgba(0,0,0,0.2)' }}>
-        <strong>showing {sortedTasks.length} of {tasks.length} tasks</strong>
+      <div className="y2k-alert mb-4">
+        showing {sortedTasks.length} of {tasks.length} tasks
       </div>
 
       {/* render the actual task list */}
@@ -96,75 +88,52 @@ export const TaskList = ({ tasks, onEdit, onDelete }: TaskListProps) => {
           // key is super important, it helps react know which item is which
           // without it, react gets confused when you add/delete/reorder items
           <div key={task.id} className="col-12">
-            <div 
-              className="card border-4 border-dark"
-              style={{ 
-                boxShadow: '6px 6px 0px rgba(0,0,0,0.4)',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                transform: 'rotate(-0.5deg)'
-              }}
-            >
-              <div className="card-body" style={{ background: 'rgba(255,255,255,0.95)' }}>
-                {/* title of task and its priorityyyy */}
+            <div className="card y2k-card">
+              <div className="card-body">
+                {/* title of task and its priority */}
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                  <h3 className="card-title mb-0" style={{ 
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-                    fontWeight: 'bold',
-                    fontSize: '1.5rem'
-                  }}>
+                  <h3 className="y2k-title mb-0">
                     {task.title}
                   </h3>
                   <span 
-                    className={`badge rounded-pill fs-6 ${
+                    className={`y2k-badge ${
                       task.priority === 'high' 
-                        ? 'bg-danger' 
+                        ? 'y2k-badge-high' 
                         : task.priority === 'medium' 
-                        ? 'bg-warning text-dark' 
-                        : 'bg-success'
+                        ? 'y2k-badge-medium' 
+                        : 'y2k-badge-low'
                     }`}
-                    style={{ 
-                      boxShadow: '2px 2px 0px rgba(0,0,0,0.3)',
-                      padding: '8px 16px'
-                    }}
                   >
                     {task.priority}
                   </span>
                 </div>
 
                 {/* task description */}
-                <p className="card-text text-muted mb-3" style={{ fontSize: '1.1rem' }}>
+                <p className="card-text mb-3" style={{ fontSize: '1.1rem', fontWeight: '500' }}>
                   {task.description}
                 </p>
 
                 {/* status and due date info */}
-                <div className="d-flex gap-4 mb-3">
-                  <span className="badge bg-info text-dark" style={{ fontSize: '0.9rem', padding: '6px 12px' }}>
-                    status: <strong>{task.status}</strong>
+                <div className="d-flex gap-3 mb-3 flex-wrap">
+                  <span className="y2k-status-badge">
+                    status: {task.status}
                   </span>
-                  <span className="badge bg-secondary" style={{ fontSize: '0.9rem', padding: '6px 12px' }}>
-                    due: <strong>{new Date(task.dueDate).toLocaleDateString()}</strong>
+                  <span className="y2k-status-badge">
+                    due: {new Date(task.dueDate).toLocaleDateString()}
                   </span>
                 </div>
 
-                {/* action buttons - myspace style buttons old skooool */}
-                <div className="d-flex gap-2">
+                {/* action buttons - y2k style */}
+                <div className="d-flex gap-3">
                   <button 
                     onClick={() => onEdit(task)}
-                    className="btn btn-primary btn-lg border-3 border-dark"
-                    style={{ 
-                      boxShadow: '3px 3px 0px rgba(0,0,0,0.4)',
-                      fontWeight: 'bold'
-                    }}
+                    className="y2k-btn y2k-btn-edit"
                   >
                     edit
                   </button>
                   <button 
                     onClick={() => onDelete(task.id)}
-                    className="btn btn-danger btn-lg border-3 border-dark"
-                    style={{ 
-                      boxShadow: '3px 3px 0px rgba(0,0,0,0.4)',
-                      fontWeight: 'bold'
-                    }}
+                    className="y2k-btn y2k-btn-delete"
                   >
                     delete
                   </button>
@@ -177,11 +146,7 @@ export const TaskList = ({ tasks, onEdit, onDelete }: TaskListProps) => {
         {/* show message if no tasks match the search */}
         {sortedTasks.length === 0 && (
           <div className="col-12">
-            <div className="alert alert-warning text-center border-3 border-dark" style={{ 
-              boxShadow: '5px 5px 0px rgba(0,0,0,0.3)',
-              fontSize: '1.2rem',
-              fontWeight: 'bold'
-            }}>
+            <div className="y2k-alert text-center" style={{ fontSize: '1.2rem' }}>
               {searchTerm ? 'no tasks found matching your search' : 'no tasks yet, add one to get started'}
             </div>
           </div>
