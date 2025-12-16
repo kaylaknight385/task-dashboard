@@ -4,13 +4,16 @@ import '../WindowPopup.css';
 interface WindowPopupProps {
   title: string;
   gifSrc: string;
+  initialX?: number;
+  initialY?: number;
 }
 
-export const WindowPopup = ({ title, gifSrc }: WindowPopupProps) => {
-  // starter position of the popup, left upper side of screen
-  const [position, setPosition] = useState({ x: 20, y: 100 });
+export const WindowPopup = ({ title, gifSrc, initialX = 20, initialY = 100 }: WindowPopupProps) => {
+  // starter position of the popup
+  const [position, setPosition] = useState({ x: initialX, y: initialY });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [isMinimized, setIsMinimized] = useState(false);
   
   const windowRef = useRef<HTMLDivElement>(null);
 
@@ -55,6 +58,15 @@ export const WindowPopup = ({ title, gifSrc }: WindowPopupProps) => {
     }
   }, [isDragging, dragOffset])
 
+  // minimize window
+  const handleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
+  if (isMinimized) {
+    return null;
+  }
+
   return (
     <div 
       ref={windowRef}
@@ -72,9 +84,9 @@ export const WindowPopup = ({ title, gifSrc }: WindowPopupProps) => {
       >
         <span className="win98-title">{title}</span>
         <div className="win98-buttons">
-          <button className="win98-btn win98-minimize">_</button>
+          <button className="win98-btn win98-minimize" onClick={handleMinimize}>_</button>
           <button className="win98-btn win98-maximize">□</button>
-          <button className="win98-btn win98-close">×</button>
+          <button className="win98-btn win98-close" onClick={handleMinimize}>×</button>
         </div>
       </div>
 
