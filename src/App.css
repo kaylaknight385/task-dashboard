@@ -94,6 +94,7 @@
 .y2k-btn:hover {
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.5);
+  border-color: rgb(255, 72, 0);
 }
 
 .y2k-btn:active {
@@ -109,6 +110,7 @@
 
 .y2k-btn-edit:hover {
   background: linear-gradient(135deg, var(--burnt-orange) 0%, var(--dark-orange) 100%);
+  border-color: rgb(255, 72, 0)
 }
 
 .y2k-btn-delete {
@@ -119,6 +121,7 @@
 
 .y2k-btn-delete:hover {
   background: linear-gradient(135deg, var(--hot-pink) 0%, var(--burnt-orange) 100%);
+  border-color: rgb(255, 72, 0)
 }
 
 /* task cards */
@@ -133,6 +136,7 @@
 .y2k-card:hover {
   transform: rotate(0deg) scale(1.02);
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+  border-color: rgb(255, 72, 0)
 }
 
 .y2k-title {
@@ -447,6 +451,7 @@
 .btn-create-task:hover {
   transform: translate(-3px, -3px);
   box-shadow: 11px 11px 0px rgba(0, 0, 0, 0.5);
+  border-color: rgb(255, 72, 0)
 }
 
 .btn-create-task:active {
@@ -529,6 +534,7 @@
 .btn-primary:hover {
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.5);
+  border-color: rgb(255, 72, 0);
 }
 
 .btn-secondary {
@@ -539,6 +545,7 @@
 .btn-secondary:hover {
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.5);
+  border-color: rgb(255, 72, 0);
 }
 
 /* task filter styles */
