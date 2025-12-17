@@ -110,7 +110,7 @@
 
 .y2k-btn-edit:hover {
   background: linear-gradient(135deg, var(--burnt-orange) 0%, var(--dark-orange) 100%);
-  border-color: rgb(255, 72, 0)
+  border-color: rgb(255, 72, 0);
 }
 
 .y2k-btn-delete {
@@ -121,7 +121,7 @@
 
 .y2k-btn-delete:hover {
   background: linear-gradient(135deg, var(--hot-pink) 0%, var(--burnt-orange) 100%);
-  border-color: rgb(255, 72, 0)
+  border-color: rgb(255, 72, 0);
 }
 
 /* task cards */
