@@ -55,7 +55,12 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
+
 
 .y2k-main-title {
   font-family: 'Boba Mono', 'Courier New', monospace;
@@ -387,13 +392,22 @@
 }
 
 .dashboard-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   margin-bottom: 40px;
   padding: 30px;
   background: linear-gradient(135deg, var(--bright-orange) 0%, var(--burnt-orange) 100%);
   border: 6px solid black;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
   transform: rotate(-1deg);
+}
+
+.dashboard-jake {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5));
 }
 
 .dashboard-header h1 {
@@ -618,5 +632,198 @@
   
   .dashboard-section h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* fourth goldfish zigzag swim */
+.goldfish-4 {
+  animation: swim4 35s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes swim4 {
+  0% {
+    left: 50%;
+    top: 10%;
+    transform: scaleX(1) rotate(0deg);
+  }
+  33% {
+    left: 20%;
+    top: 45%;
+    transform: scaleX(1) rotate(-25deg);
+  }
+  66% {
+    left: 90%;
+    top: 70%;
+    transform: scaleX(1) rotate(20deg);
+  }
+  100% {
+    left: 50%;
+    top: 10%;
+    transform: scaleX(1) rotate(0deg);
+  }
+}
+
+/* fifth goldfish fast swim */
+.goldfish-5 {
+  animation: swim5 30s linear infinite;
+  animation-delay: 8s;
+}
+
+@keyframes swim5 {
+  0% {
+    left: 110%;
+    top: 15%;
+    transform: scaleX(-1) rotate(5deg);
+  }
+  50% {
+    left: -150px;
+    top: 85%;
+    transform: scaleX(-1) rotate(-5deg);
+  }
+  51% {
+    transform: scaleX(1) rotate(5deg);
+  }
+  100% {
+    left: 110%;
+    top: 15%;
+    transform: scaleX(1) rotate(-5deg);
+  }
+}
+
+/* sixth goldfish lazy float */
+.goldfish-6 {
+  animation: swim6 55s ease-in-out infinite;
+  animation-delay: 15s;
+}
+
+@keyframes swim6 {
+  0% {
+    left: 25%;
+    top: 90%;
+    transform: scaleX(1) rotate(0deg);
+  }
+  25% {
+    left: 75%;
+    top: 20%;
+    transform: scaleX(1) rotate(-30deg);
+  }
+  50% {
+    left: 10%;
+    top: 50%;
+    transform: scaleX(1) rotate(15deg);
+  }
+  75% {
+    left: 85%;
+    top: 80%;
+    transform: scaleX(1) rotate(-10deg);
+  }
+  100% {
+    left: 25%;
+    top: 90%;
+    transform: scaleX(1) rotate(0deg);
+  }
+}
+
+/* seventh goldfish corner to corner */
+.goldfish-7 {
+  animation: swim7 42s ease-in-out infinite;
+  animation-delay: 20s;
+}
+
+@keyframes swim7 {
+  0% {
+    left: -150px;
+    top: 5%;
+    transform: scaleX(1) rotate(0deg);
+  }
+  50% {
+    left: 110%;
+    top: 95%;
+    transform: scaleX(1) rotate(25deg);
+  }
+  51% {
+    transform: scaleX(-1) rotate(-25deg);
+  }
+  100% {
+    left: -150px;
+    top: 5%;
+    transform: scaleX(-1) rotate(0deg);
+  }
+}
+
+/* eighth goldfish spiral swim */
+.goldfish-8 {
+  animation: swim8 48s ease-in-out infinite;
+  animation-delay: 12s;
+}
+
+@keyframes swim8 {
+  0% {
+    left: 50%;
+    top: 50%;
+    transform: scaleX(1) rotate(0deg) scale(0.8);
+  }
+  20% {
+    left: 80%;
+    top: 30%;
+    transform: scaleX(1) rotate(72deg) scale(1);
+  }
+  40% {
+    left: 70%;
+    top: 70%;
+    transform: scaleX(1) rotate(144deg) scale(1.2);
+  }
+  60% {
+    left: 30%;
+    top: 65%;
+    transform: scaleX(1) rotate(216deg) scale(1);
+  }
+  80% {
+    left: 20%;
+    top: 25%;
+    transform: scaleX(1) rotate(288deg) scale(0.9);
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+    transform: scaleX(1) rotate(360deg) scale(0.8);
+  }
+}
+
+/* ninth goldfish bouncy swim */
+.goldfish-9 {
+  animation: swim9 38s ease-in-out infinite;
+  animation-delay: 18s;
+}
+
+@keyframes swim9 {
+  0% {
+    left: 110%;
+    top: 40%;
+    transform: scaleX(-1) rotate(0deg);
+  }
+  25% {
+    left: 60%;
+    top: 10%;
+    transform: scaleX(-1) rotate(-20deg);
+  }
+  50% {
+    left: -150px;
+    top: 55%;
+    transform: scaleX(-1) rotate(10deg);
+  }
+  51% {
+    transform: scaleX(1) rotate(-10deg);
+  }
+  75% {
+    left: 40%;
+    top: 90%;
+    transform: scaleX(1) rotate(20deg);
+  }
+  100% {
+    left: 110%;
+    top: 40%;
+    transform: scaleX(1) rotate(0deg);
   }
 }

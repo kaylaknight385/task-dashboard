@@ -51,6 +51,36 @@ function App() {
         alt="swimming goldfish" 
         className="swimming-goldfish goldfish-3"
       />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-4"
+      />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-5"
+      />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-6"
+      />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-7"
+      />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-8"
+      />
+      <img 
+        src="/src/assets/goldfishhh.gif" 
+        alt="swimming goldfish" 
+        className="swimming-goldfish goldfish-9"
+      />
 
       <div className="y2k-header">
         <h1 className="y2k-main-title">

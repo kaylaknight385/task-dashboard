@@ -110,8 +110,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h1>The Manager</h1>
-        <p>get ur life together (or at least try)</p>
+        <img src="/src/assets/jackthedog.gif" alt="jake the dog" className="dashboard-jake" />
+        <div>
+          <h1>The Manager</h1>
+          <p>get ur life together (or at least try)</p>
+        </div>
       </div>
 
       {/* create task button */}
