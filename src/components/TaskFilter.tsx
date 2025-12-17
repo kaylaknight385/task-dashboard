@@ -1,14 +1,23 @@
+// this component lets users filter their tasks by status, priority, and search term
+// it takes in current filter settings and a function to update them
+
 import React from 'react';
 import type { TaskFilterProps, Status, Priority } from '../types';
 
 const TaskFilter: React.FC<TaskFilterProps> = ({ filters, onFilterChange }) => {
+    //react.fr means react functional component. it is used to explicitly type a function component, helping ensure type safety for props and the return value
+    //when user changes the status dropdown, update the filters
+    //we keep all other filter settings the same, just change status
   const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    //'e' is short for event. the line above is just saying an event is happpening and it will be a react change event
     onFilterChange({
-      ...filters,
-      status: e.target.value as Status | 'all',
+      ...filters, // spread operator keeps existing filters
+      status: e.target.value as Status | 'all', // update just the status
     });
   };
 
+  // when user changes the priority dropdown, update the filters
+  // same deal - keep everything else, just change priority
   const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onFilterChange({
       ...filters,
@@ -16,6 +25,8 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filters, onFilterChange }) => {
     });
   };
 
+  // when user types in the search box, update the search term
+  // this happens on every keystroke so they see results in real time
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onFilterChange({
       ...filters,
@@ -23,6 +34,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filters, onFilterChange }) => {
     });
   };
 
+  // reset all filters back to default (show everything)
   const clearFilters = () => {
     onFilterChange({
       status: 'all',

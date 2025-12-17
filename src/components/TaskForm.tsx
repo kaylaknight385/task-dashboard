@@ -25,8 +25,9 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, initialData, onCancel }) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    //for if they dont put no title
     if (!formData.title.trim()) {
-      alert('yo you need a title at least!');
+      alert('lmao make a title or sumn!');
       return;
     }
     onSubmit(formData);
@@ -50,7 +51,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, initialData, onCancel }) 
   return (
     <form onSubmit={handleSubmit} className="task-form">
       <div className="form-group">
-        <label htmlFor="title">task name *</label>
+        <label htmlFor="title">task name*</label>
         <input
           type="text"
           id="title"
